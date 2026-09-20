@@ -1,0 +1,10 @@
+{
+  "domain": "drug-spending-attribution",
+  "version": 1,
+  "facts": [
+    "重点监测药品支出减少约四百五十亿元",
+    "支出变化可能受多种因素影响",
+    "监管成效不能替代患者用药可及性判断"
+  ],
+  "sample_id": "sample-019"
+}
