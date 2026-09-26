@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "归因主张",
+  "description": "分析师提交的归因：必须附证据，以区间表达不确定性；同一 competition_group 内的归因彼此竞争、不可加总。",
+  "type": "object",
+  "required": [
+    "scope_id",
+    "author",
+    "hypothesis",
+    "effect_low_yuan",
+    "effect_high_yuan",
+    "rationale",
+    "evidence"
+  ],
+  "properties": {
+    "scope_id": {"type": "string", "minLength": 1},
+    "author": {"type": "string", "minLength": 1},
+    "hypothesis": {
+      "type": "string",
+      "enum": [
+        "anti_fraud",
+        "price_cut",
+        "supply_shortage",
+        "patient_mix",
+        "substitution",
+        "settlement_delay",
+        "access_barrier",
+        "other"
+      ]
+    },
+    "effect_low_yuan": {
+      "type": "integer",
+      "description": "解释的压降金额下界；负值表示主张存在反向增加"
+    },
+    "effect_high_yuan": {
+      "type": "integer",
+      "description": "解释的压降金额上界，不得小于下界"
+    },
+    "rationale": {"type": "string", "minLength": 1},
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["kind", "ref"],
+        "properties": {
+          "kind": {"type": "string", "enum": ["aggregate", "dataset", "note"]},
+          "ref": {"type": "string", "minLength": 1},
+          "note": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "competition_group": {
+      "type": ["string", "null"],
+      "description": "同组归因彼此竞争；汇总时组内取并集跨度而非加总"
+    }
+  },
+  "additionalProperties": false
+}
