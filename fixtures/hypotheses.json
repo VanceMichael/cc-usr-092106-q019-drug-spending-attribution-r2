@@ -1,0 +1,53 @@
+[
+  {
+    "hypothesis_id": "hyp-anti-fraud",
+    "category": "anti_fraud",
+    "statement": "支出下降主要来自针对易倒卖药品的核查行动，倒卖性购药被挤出。",
+    "author": "analyst-a",
+    "submitted_at": "2026-07-10T09:00:00Z",
+    "uncertainty": "low",
+    "evidence": [
+      {
+        "source": "inspection",
+        "summary": "窗口期核查立案数与支出下降幅度在地区层面高度同步。",
+        "strength": "strong",
+        "record_refs": ["rec-insp-001", "rec-insp-002"]
+      },
+      {
+        "source": "settlement",
+        "summary": "下降集中在核查行动覆盖的药品与地区。",
+        "strength": "moderate"
+      }
+    ]
+  },
+  {
+    "hypothesis_id": "hyp-price-cut",
+    "category": "price_adjustment",
+    "statement": "部分下降来自目录谈判后的单价下调，而非用量变化。",
+    "author": "analyst-b",
+    "submitted_at": "2026-07-11T14:30:00Z",
+    "uncertainty": "medium",
+    "evidence": [
+      {
+        "source": "price",
+        "summary": "窗口期多个监测药品单价下调，但量纲分解尚未完成。",
+        "strength": "moderate"
+      }
+    ]
+  },
+  {
+    "hypothesis_id": "hyp-supply",
+    "category": "supply_shortage",
+    "statement": "个别地区下降可能由供应短缺造成，需与反欺诈成效区分。",
+    "author": "analyst-a",
+    "submitted_at": "2026-07-12T10:00:00Z",
+    "uncertainty": "high",
+    "evidence": [
+      {
+        "source": "supply",
+        "summary": "个别地区库存比下降，但覆盖期间不完整。",
+        "strength": "weak"
+      }
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "snapshot_id": "snap-2026h1-monitor-v1",
+  "created_at": "2026-07-01T00:00:00Z",
+  "cohort": {
+    "cohort_id": "cohort-basic-all",
+    "definition": {
+      "insurance": "basic_medical",
+      "beneficiary": "all"
+    }
+  },
+  "drug_scope": {
+    "catalog_version": "monitoring-catalog-2026-v1",
+    "drug_ids": ["D1001", "D1002", "D1003", "D1004", "D1005", "D1006"]
+  },
+  "region_scope": {
+    "region_codes": ["110000", "310000", "440000"]
+  },
+  "window": {
+    "start": "2026-01",
+    "end": "2026-06"
+  }
+}

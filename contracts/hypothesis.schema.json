@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "竞争性归因",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "hypothesis_id",
+      "category",
+      "statement",
+      "author",
+      "submitted_at",
+      "uncertainty"
+    ],
+    "properties": {
+      "hypothesis_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "category": {
+        "type": "string",
+        "enum": [
+          "anti_fraud",
+          "price_adjustment",
+          "supply_shortage",
+          "patient_mix",
+          "substitution",
+          "settlement_delay",
+          "access_barrier"
+        ]
+      },
+      "statement": {
+        "type": "string",
+        "minLength": 1
+      },
+      "author": {
+        "type": "string",
+        "minLength": 1
+      },
+      "submitted_at": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uncertainty": {
+        "type": "string",
+        "enum": ["low", "medium", "high"]
+      },
+      "evidence": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["source", "summary", "strength"],
+          "properties": {
+            "source": {
+              "type": "string",
+              "enum": [
+                "settlement",
+                "price",
+                "supply",
+                "treatment_volume",
+                "inspection",
+                "patient_feedback"
+              ]
+            },
+            "summary": {
+              "type": "string",
+              "minLength": 1
+            },
+            "strength": {
+              "type": "string",
+              "enum": ["strong", "moderate", "weak"]
+            },
+            "record_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+}
